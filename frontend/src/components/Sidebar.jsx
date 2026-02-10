@@ -1,5 +1,5 @@
-import React from 'react';
 import { LayoutDashboard, Ticket, BarChart3, Settings, LogOut } from 'lucide-react';
+import {useNavigate} from "react-router-dom"
 
 const Sidebar = () => {
     const menuItems = [
@@ -8,6 +8,7 @@ const Sidebar = () => {
         { icon: BarChart3, label: 'Analytics', active: false },
         { icon: Settings, label: 'Settings', active: false },
     ];
+    const navigate = useNavigate();
 
     return (
         <div className="w-64 bg-white border-r border-gray-200 h-screen flex flex-col">
@@ -57,7 +58,7 @@ const Sidebar = () => {
                 <button
                     onClick={() => {
                         localStorage.removeItem('tickethub_auth');
-                        window.location.href = '/login';
+                        navigate("/login");
                     }}
                     className="w-full flex items-center justify-center gap-2 px-4 py-2 text-sm text-red-600 bg-red-50 hover:bg-red-100 rounded-lg transition-colors"
                 >

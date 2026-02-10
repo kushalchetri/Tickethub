@@ -23,7 +23,7 @@ const Dashboard = () => {
     const fetchTickets = async () => {
         try {
             setLoading(true);
-            const response = await axios.get('http://localhost:5000/api/tickets');
+            const response = await axios.get('https://tickethub-seven.vercel.app/api/tickets');
             setTickets(response.data);
 
             // Auto-select first ticket if available
